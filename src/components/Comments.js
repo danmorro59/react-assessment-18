@@ -1,15 +1,22 @@
-const Comments = () => {
+import React, {useState, useEffect} from 'react'
+const Comments = ({comments, setCommen}) => {
     // Insturction:
     // Use endpoint: https://jsonplaceholder.typicode.com/comments to get a list of comments. 
     // display the comment body on the screen
     // add event listeners to each comment body that when clicked will simply console.log the comment id.
-
-    // you will need to use the useEffect hook. Do this in async / await syntax.
-
-
-    return(
-        // Replace this with your code.
-        <h1>Comments component</h1>
+   
+   const handleClick = (e) => {
+    e.preventDefault()
+    console.log(e.target.id)
+   }
+    
+    return (
+        <div>
+            {comments.map((current) => (
+                <div onClick={handleClick} >`${current.body}`</div>
+                
+            ))}
+        </div>
     )
 }
 
