@@ -13,7 +13,7 @@ const Comments = ({comments, setCommen}) => {
     return (
         <div>
             {comments.map((current) => (
-                <div onClick={handleClick} >`${current.body}`</div>
+                <div onClick={handleClick} key={current.postId} id={current.postId}>`${current.body}`</div>
                 
             ))}
         </div>
